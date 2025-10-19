@@ -1,0 +1,37 @@
+name: "Ratnadira Widyasari"
+title: "Research Scientist"
+affiliation: "School of Computing and Information Systems"
+location: "Singapore"
+email: "ratnadiraw.2020@phdcs.smu.edu.sg"
+website: "https://ratnadiraw.github.io"
+# pronouns: "she/her"
+photo: "/assets/img/profile.jpg"
+about: >
+  Dr. Ratnadira Widyasari received her Ph.D. from Singapore Management University, 
+  where she was advised by ACM/IEEE Fellow Professor David Lo. Her research focuses 
+  on advancing software quality assurance through automation and explainability. 
+  She has led and conducted research resulting in publications in top-tier venues, 
+  including conferences such as ICSE and FSE, and journals such as TSE, TOSEM, and EMSE. 
+  Her work has been deployed in collaboration with a government agency, where it uncovered 
+  previously unknown security vulnerabilities, several of which have been assigned CVE IDs. 
+  
+
+interests:
+  - Software Engineering
+  - Software Quality Assurance
+  - Artificial Intelligence
+  - AI4SE
+  - Explainable AI
+social:
+  - id: linkedin
+    label: "LinkedIn"
+    url: "https://www.linkedin.com/in/ratnadira-widyasari/"
+  - id: google-scholar
+    label: "Google Scholar"
+    url: "https://scholar.google.com/citations?user=Efvi5TYAAAAJ&hl=en"
+  - id: dblp
+    label: "Email"
+    url: "mailto:ratnadiraw.2020@phdcs.smu.edu.sg"
+  - id: github
+    label: "GitHub"
+    url: "https://github.com/ratnadiraw"

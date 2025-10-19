@@ -1,0 +1,38 @@
+{%- assign publications = site.data.publications | sort: 'year' | reverse -%}
+<section id="publications" class="section section--publications">
+  <div class="section__inner">
+    <h2>Selected Publications</h2>
+    {%- if publications and publications.size > 0 -%}
+      <ol class="pub-list">
+        {%- for pub in publications -%}
+          <li class="pub-list__item">
+            <p class="pub-list__title">
+              {%- if pub.link and pub.link != "" -%}
+                <a href="{{ pub.link }}">{{ pub.title }}</a>
+              {%- else -%}
+                {{ pub.title }}
+              {%- endif -%}
+            </p>
+            <p class="pub-list__meta">
+              <span class="pub-list__authors">{{ pub.authors }}</span><br />
+              <span class="pub-list__venue">
+                {{ pub.venue }}{% if pub.year %}, {{ pub.year }}{% endif %}
+              </span>
+              {%- if pub.doi -%}
+                <span class="pub-list__doi">DOI: <a href="https://doi.org/{{ pub.doi }}">{{ pub.doi }}</a></span>
+              {%- endif -%}
+            </p>
+            {%- if pub.abstract -%}
+              <details class="pub-list__abstract">
+                <summary>Abstract</summary>
+                <p>{{ pub.abstract }}</p>
+              </details>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ol>
+    {%- else -%}
+      <p>No publications listed yet. Add entries to <code>_data/publications.yml</code>.</p>
+    {%- endif -%}
+  </div>
+</section>

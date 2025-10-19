@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+    {%- if site.plugins contains 'jekyll-seo-tag' -%}
+      {% seo %}
+    {%- endif -%}
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <nav class="site-nav">
+          <a href="#profile">Profile</a>
+          <a href="#news">News</a>
+          <a href="https://scholar.google.com/citations?user=Efvi5TYAAAAJ&hl=en">Publications</a>
+        </nav>
+      </div>
+    </header>
+    <main class="site-main">
+      {{ content }}
+    </main>
+    <footer class="site-footer">
+      <p>&copy; {{ site.time | date: '%Y' }} Ratnadira Widyasari. Built with Jekyll.</p>
+    </footer>
+  </body>
+</html>

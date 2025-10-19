@@ -1,0 +1,23 @@
+- title: "Sample Paper Title"
+  authors: "Your Name, Coauthor One, Coauthor Two"
+  venue: "Proceedings of the Imaginary Conference on Science"
+  year: 2024
+  doi: "10.0000/example-doi"
+  link: "https://example.com/paper"
+  abstract: >
+    Concise summary of the paper’s contribution. Mention the problem, method,
+    and key findings in two short sentences.
+- title: "Another Publication"
+  authors: "Your Name and Collaborator"
+  venue: "Journal of Demonstration Results"
+  year: 2023
+  link: ""
+  abstract: >
+    Highlight the main idea, why it matters, and any notable impact or awards.
+- title: "Earlier Work"
+  authors: "Your Name"
+  venue: "Doctoral Dissertation"
+  year: 2021
+  link: "https://example.com/dissertation"
+  abstract: >
+    Optional abstract or summary text for this publication entry.

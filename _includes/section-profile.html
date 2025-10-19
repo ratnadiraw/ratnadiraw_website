@@ -1,0 +1,79 @@
+{%- assign profile = site.data.profile -%}
+{%- assign default_photo = '/assets/img/profile.svg' | relative_url -%}
+{%- assign photo_url = profile.photo -%}
+{%- if photo_url and photo_url contains '://' -%}
+  {%- assign resolved_photo = photo_url -%}
+{%- elsif photo_url and photo_url != '' -%}
+  {%- assign resolved_photo = photo_url | relative_url -%}
+{%- else -%}
+  {%- assign resolved_photo = default_photo -%}
+{%- endif -%}
+<section id="profile" class="section section--profile">
+  <div class="section__inner">
+    <div class="profile-card">
+      <div class="profile-card__sidebar">
+        <div class="profile-card__media">
+          <img
+            class="profile-card__photo"
+            src="{{ resolved_photo }}"
+            alt="{{ profile.name | default: site.title }} portrait"
+            loading="lazy"
+          />
+        </div>
+        {%- if profile.social -%}
+          <div class="profile-card__social">
+            <h2 class="profile-card__social-heading">Connect</h2>
+            <ul class="social-links">
+              {%- for link in profile.social -%}
+                {%- assign icon_path = '/assets/img/icons/' | append: link.id | append: '.svg' -%}
+                <li>
+                  <a class="social-links__item" href="{{ link.url }}" target="_blank" rel="noopener">
+                    <span class="social-links__icon" aria-hidden="true">
+                      <img src="{{ icon_path | relative_url }}" alt="" loading="lazy" />
+                    </span>
+                    <span class="social-links__label">{{ link.label }}</span>
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+      </div>
+      <div class="profile-card__text">
+        <h1 class="profile-card__name">{{ profile.name | default: site.title }}</h1>
+        <p class="profile-card__title">
+          {{ profile.title }}{% if profile.affiliation %}, {{ profile.affiliation }}{% endif %}
+        </p>
+        <p class="profile-card__meta">
+          {%- if profile.location -%}
+            <span>{{ profile.location }}</span>
+          {%- endif -%}
+          {%- if profile.pronouns -%}
+            <span>&bull; {{ profile.pronouns }}</span>
+          {%- endif -%}
+        </p>
+        {%- if profile.about -%}
+          <p class="profile-card__about">{{ profile.about }}</p>
+        {%- endif -%}
+        <ul class="profile-card__facts">
+          {%- if profile.email -%}
+            <li><strong>Email:</strong> <a href="mailto:{{ profile.email }}">{{ profile.email }}</a></li>
+          {%- endif -%}
+          {%- if profile.website -%}
+            <li><strong>Website:</strong> <a href="{{ profile.website }}">{{ profile.website }}</a></li>
+          {%- endif -%}
+        </ul>
+        {%- if profile.interests -%}
+          <div class="profile-card__interests">
+            <h2>Research Interests</h2>
+            <ul>
+              {%- for interest in profile.interests -%}
+                <li>{{ interest }}</li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>

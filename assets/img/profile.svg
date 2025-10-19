@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Profile Photo</title>
+  <desc id="desc">
+    Rounded avatar container that uses profile.jpg when present and falls back to a gradient silhouette.
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3056d3" />
+      <stop offset="100%" stop-color="#00b4d8" />
+    </linearGradient>
+    <clipPath id="photo-clip">
+      <rect width="240" height="240" rx="32" />
+    </clipPath>
+  </defs>
+  <rect width="240" height="240" rx="32" fill="url(#bg)" />
+  <image
+    href="profile.jpg"
+    width="240"
+    height="240"
+    clip-path="url(#photo-clip)"
+    preserveAspectRatio="xMidYMid slice"
+  />
+  <circle cx="120" cy="92" r="48" fill="#f9fafc" opacity="0.25" />
+  <path
+    d="M60 192c0-34 24-58 60-58s60 24 60 58"
+    fill="#f9fafc"
+    opacity="0.25"
+  />
+</svg>

@@ -1,0 +1,30 @@
+title: "Academic Portfolio"
+description: "Personal academic profile, news, and publications."
+baseurl: ""
+url: "https://ratnadiraw.github.io"
+
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+collections:
+  posts:
+    output: false
+
+exclude:
+  - README.md
+  - node_modules
+  - vendor
